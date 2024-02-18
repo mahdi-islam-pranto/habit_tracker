@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:track_habit/theme/theme_provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,32 +25,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          DropdownButton(
-            // Initial Value
-            value: dropdownvalue,
-
-            // Down Arrow Icon
-            icon: const Icon(Icons.keyboard_arrow_down),
-
-            // Array list of items
-            items: items.map((String items) {
-              return DropdownMenuItem(
-                value: items,
-                child: Text(items),
-              );
-            }).toList(),
-            // After selecting the desired option,it will
-            // change button value to selected value
-            onChanged: (String? newValue) {
-              setState(() {
-                dropdownvalue = newValue!;
-              });
-            },
+          Switch(
+            value: Provider.of<ThemeProvider>(context).ifDarkMode,
+            onChanged: (value) =>
+                Provider.of<ThemeProvider>(context, listen: false)
+                    .toggleTheme(),
           ),
         ],
         title: const Text("Dark/Light"),
       ),
-      body: Center(
+      drawer: Drawer(
+        backgroundColor: Theme.of(context).colorScheme.background,
+      ),
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [],
