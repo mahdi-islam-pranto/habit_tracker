@@ -2,6 +2,7 @@
 
 A new Flutter project.
 # Trac Your Daily and Monthly habit 
+# Create a habit, fullfil it daily and see the monthly result with a heatmap. 
 
 ## Getting Started
 
