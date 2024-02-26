@@ -11,22 +11,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Initial Selected Value
-  String dropdownvalue = 'Light';
-
-  // List of items in our dropdown menu
-  var items = [
-    'Light',
-    'Dark',
-    'System',
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         actions: [
           Switch(
-            value: Provider.of<ThemeProvider>(context).ifDarkMode,
+            value: Provider.of<ThemeProvider>(context).isDarkMode,
             onChanged: (value) =>
                 Provider.of<ThemeProvider>(context, listen: false)
                     .toggleTheme(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:track_habit/pages/homepage.dart';
-import 'package:track_habit/theme/theme_data.dart';
+
 import 'package:provider/provider.dart';
 import 'package:track_habit/theme/theme_provider.dart';
 
