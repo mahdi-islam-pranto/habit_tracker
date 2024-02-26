@@ -1,6 +1,6 @@
 import 'package:isar/isar.dart';
 
-//run cmd : flutter pub run build_runner build
+//run cmd : dart run build_runner build
 part 'habit.g.dart';
 
 @Collection()
